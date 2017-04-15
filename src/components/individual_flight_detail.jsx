@@ -1,27 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var AppStore = require('../stores/AppStore');
+var imagemap = require('../constants/image_map.js');
 
 var IndividualFlightDetail = React.createClass({
 
-	getDataHtml: function(){
-		console.log(this.props)
-		return (
-			<div>
-			</div>
-		)
-	},
-
 	render: function(){
 		return (
-			<div>
+			<div className={this.props.data.remove ? "display-none" : ""}>
 
 				<div>
-					<h2>{this.props.data.price}</h2>
+					<h2>{"Rs. " + this.props.data.price}</h2>
 				</div>
 				<div className="float-right">
-					<img src="https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" className="width-100px"/> <br/>
+					<img src={imagemap.default[this.props.data.company_name]} className="width-100px"/> <br/>
 					<input type="button" value="Book Flight"/>
 				</div>
 				{/*Hack : using table tag for now. Its expensive. Need to update*/}

@@ -5,7 +5,6 @@ import FlightDetails from './flight_details.jsx';
 
 var AppStore = require('../stores/AppStore');
 
-
 var RightPane = React.createClass({
 
 	getInitialState: function(){

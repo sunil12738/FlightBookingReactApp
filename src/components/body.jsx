@@ -5,6 +5,7 @@ import LeftPane from './left_pane.jsx';
 import RightPane from './right_pane.jsx';
 
 var Body = React.createClass({
+
 	render: function(){
 		return (
 			<div>
