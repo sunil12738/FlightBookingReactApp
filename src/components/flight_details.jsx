@@ -6,18 +6,22 @@ import IndividualFlightDetail from './individual_flight_detail.jsx';
 var FlightDetails = React.createClass({
 
 	getIndividualFlightDetail: function(){
-		var data = [];
-		for (var i = 0; i <= 10; i++) {
-			data.push(<IndividualFlightDetail />);
+		var html = [];
+		for (var i = 0; i < this.props.data.result.departure.length; i++) {
+			html.push(<IndividualFlightDetail 
+						data={this.props.data.result.departure[i]} 
+						oneWay={this.props.oneWay}/>);
 		};
-		console.log(data)
-		return data
+		return html
 	},
+	
 	render: function(){
+
+		if(this.props.data && this.props.data.result) {}
+		else return null
+
 		return (
 			<div>
-				<div>
-				</div>
 				{this.getIndividualFlightDetail()}
 			</div>
 		);
