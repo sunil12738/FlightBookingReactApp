@@ -6,43 +6,25 @@ var AppStore = require('../stores/AppStore');
 
 var Itinerary = React.createClass({
 
-	getInitialState: function(){
-		return {
-			startCity : "---",
-			endCity : "---",
-			deptDate : "---",
-			returnDate : "---",
-		}
-	},
-
-	componentDidMount: function(){
-		AppStore.addChangeListener(this.getData)
-	},
-
-	getData: function(){
-		var data = AppStore.getSearchData();
-		this.setState({
-			startCity : data.startCity,
-			endCity : data.endCity,
-			deptDate : data.deptDate,
-			returnDate : data.returnDate			
-		})
-	},
 	render: function(){
+
+		if(this.props.data && this.props.data.search_data) {} 
+		else {return null}
+		
 		return (
 			<div>
-				<div>
-					<span>{this.state.startCity}</span>
-					<span>></span>
-					<span>{this.state.endCity}</span>
-					<span>></span>
-					<span>{this.state.startCity}</span>
+			
+				<div className="float-right">
+					<div>{"Depart : " + this.props.data.search_data.deptDate}</div>
+					<div>{this.props.data.search_data.oneway ? "" : "Return : " + this.props.data.search_data.returnDate}</div>
 				</div>
-				<div>
-					<span>{this.state.deptDate}</span>
-					<span>:</span>
-					<span>{this.state.returnDate}</span>
-				</div>
+				<h2>
+					<span>{this.props.data.search_data.startCity}</span>
+					<span>></span>
+					<span>{this.props.data.search_data.endCity}</span>
+					<span>{this.props.data.search_data.oneway ? "" : ">"}</span>
+					<span>{this.props.data.search_data.oneway ? "" : this.props.data.search_data.startCity}</span>
+				</h2>
 			</div>
 		);
 	}

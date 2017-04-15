@@ -1,68 +1,31 @@
-var ADispatcher = require('../dispatchers/dispatcher');
-
-var SearchAction = {
-
-	searchFlights: function(data){
-		//  var data = {
-		// 		startCity : 
-		// 		endCity : 
-		// 		deptDate : 
-		// 		returnDate : 
-		// }
-		var temp_info = []
-		for (var i = 0; i < flight_data.length; ++i) {
-			// console.log(flight_data[i].fromcity)	
-			if(data.startCity === flight_data[i].fromcity && 
-				data.endCity === flight_data[i].tocity &&
-					data.deptDate === flight_data[i].date){
-				console.log("qwedunli")
-				console.log(flight_data[i])
-				temp_info.push(flight_data[i])
-			
-			}	
-		};
-		var info = {
-			"search_data" : data,
-			"result" : temp_info
-		}
-
-		ADispatcher.handleViewAction({
-			actionType:"ADD_ITEM",
-	  		item: info		
-		})
-	}
-}
-
-module.exports = SearchAction
-
-var flight_data = [
+[
 	{
-		"fromcity" : "kanpur",
+		"fromcity" : "mumbai",
 		"tocity" : "bengaluru",
 		"company_name" : "goair",
 		"flight_name" : "goair114",
 		"price" : 4197,
-		"date" : "2017-04-15",
+		"date" : "2017-11-23",
 		"dept_time" : "20:55",
 		"arr_time" : "22:9",
 	},
 	{
-		"fromcity" : "kanpur",
-		"tocity" : "bengaluru",
+		"fromcity" : "bengaluru",
+		"tocity" : "mumbai",
 		"company_name" : "indigo",
 		"flight_name" : "indigo121",
 		"price" : 1864,
-		"date" : "2017-04-15",
+		"date" : "2017-06-24",
 		"dept_time" : "15:48",
 		"arr_time" : "17:3",
 	},
 	{
-		"fromcity" : "kanpur",
-		"tocity" : "bengaluru",
+		"fromcity" : "delhi",
+		"tocity" : "kanpur",
 		"company_name" : "vistara",
 		"flight_name" : "vistara134",
 		"price" : 7712,
-		"date" : "2017-04-15",
+		"date" : "2017-04-21",
 		"dept_time" : "6:23",
 		"arr_time" : "6:48",
 	},
@@ -1848,7 +1811,7 @@ var flight_data = [
 	},
 	{
 		"fromcity" : "bengaluru",
-		"tocity" : "a",
+		"tocity" : "bengaluru",
 		"company_name" : "goair",
 		"flight_name" : "goair145",
 		"price" : 1391,

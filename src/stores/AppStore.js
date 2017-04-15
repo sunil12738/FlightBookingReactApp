@@ -3,8 +3,8 @@ var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
-var searchData = null;
-
+var searchData = {};
+var oneway = true;
 var AppStore = assign({}, EventEmitter.prototype, {
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
@@ -21,14 +21,25 @@ var AppStore = assign({}, EventEmitter.prototype, {
 	},
 	getSearchData: function(){
 		return searchData
+	},
+	updateOneWay: function(payload){
+		oneway = payload.action.item
+	},
+	getOneWay: function(){
+		return oneway
 	}
 });
 
 ADispatcher.register(function(payload){
-
-	switch(payload.source){
-		case "GET_SEARCH_DATA":
+	console.log("hi")
+	console.log(payload.action);
+	switch(payload.action.actionType){
+		case "ADD_ITEM":
 			AppStore.setSearchData(payload)
+			AppStore.emitChange()
+			break;
+		case "UPDATE_ONE_WAY":
+			AppStore.updateOneWay(payload)
 			AppStore.emitChange()
 			break;
 	}

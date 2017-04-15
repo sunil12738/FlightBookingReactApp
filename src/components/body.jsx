@@ -11,8 +11,8 @@ var Body = React.createClass({
 				{/*Hack : using table tag for now. Its expensive. Need to update*/}
 				<table>
 					<tr>
-						<td><LeftPane /></td>
-						<td><RightPane /></td>
+						<td className="vertical-align-top"><LeftPane /></td>
+						<td className="width-70"><RightPane /></td>
 					</tr>
 				</table>
 			</div>
