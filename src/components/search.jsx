@@ -112,7 +112,7 @@ var Search = React.createClass({
 
 	render: function(){
 		return (
-			<div>
+			<div className="padding-10px margin-10px border-1px-solid-grey">
 				<div>
 					<input type="button" value="one way" onClick={this.oneWaySearch} className={"button "}/>
 					<input type="button" value="two way" onClick={this.twoWaySearch} className={"button "}/>
@@ -138,7 +138,7 @@ var Search = React.createClass({
 						className={this.state.validation.returnDate ? "" : "border-1px-solid-red"} 
 						onClick={this.resetValidation}/> <br/>
 
-					<input type="button" value="Search" onClick={this.searchFlight.bind()} />
+					<input type="button" className="button" value="Search" onClick={this.searchFlight.bind()} />
 				</div>
 			</div>
 		);

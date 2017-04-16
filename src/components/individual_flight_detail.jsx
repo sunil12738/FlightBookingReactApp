@@ -7,14 +7,15 @@ var IndividualFlightDetail = React.createClass({
 
 	render: function(){
 		return (
-			<div className={this.props.data.remove ? "display-none" : ""}>
+			<div className={this.props.data.remove ? "display-none" : "margin-10px padding-10px border-1px-solid-grey"}>
+
+				<div className="float-right margin-10px padding-10px">
+					<img src={imagemap.default[this.props.data.company_name]} className="flight-image"/> <br/>
+					<input type="button" className="button" value="Book Flight"/>
+				</div>
 
 				<div>
 					<h2>{"Rs. " + this.props.data.price}</h2>
-				</div>
-				<div className="float-right">
-					<img src={imagemap.default[this.props.data.company_name]} className="width-100px"/> <br/>
-					<input type="button" value="Book Flight"/>
 				</div>
 				{/*Hack : using table tag for now. Its expensive. Need to update*/}
 				<table>

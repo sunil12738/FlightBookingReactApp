@@ -28,11 +28,13 @@ var PriceSlider = React.createClass({
 
 	render: function(){
 		return (
-			<div>
-				<div> Refine flight search </div>
-				<input type="number" min="0" ref="min_val"/> <br/>
-				<input type="number" min="0" ref="max_val"/> <br />
-				<input type="button" value="refine results" onClick={this.validate} />
+			<div className="padding-10px margin-10px border-1px-solid-grey">
+				<div className=""> Refine flight search </div>
+				<input type="number" min="0" ref="min_val" placeholder="min price"/> <br/>
+				<input type="number" min="0" ref="max_val" placeholder="max price"/>
+				<div className="text-align-center">
+					<input type="button" className="button" value="Refine Results" onClick={this.validate} />
+				</div>
 			</div>
 		);
 	}

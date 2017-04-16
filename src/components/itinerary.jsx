@@ -9,12 +9,11 @@ var Itinerary = React.createClass({
 	render: function(){
 
 		if(this.props.data && this.props.data.search_data) {} 
-		else {return null}
+		else {return <div><h2>Your flight details will be shown here</h2></div>}
 		
 		return (
-			<div>
-			
-				<div className="float-right">
+			<div className="margin-10px padding-10px">
+				<div className="float-right margin-10px padding-10px">
 					<div>{"Depart : " + this.props.data.search_data.deptDate}</div>
 					<div>{this.props.data.search_data.oneway ? "" : "Return : " + this.props.data.search_data.returnDate}</div>
 				</div>
