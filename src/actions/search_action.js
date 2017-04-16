@@ -14,8 +14,6 @@ var SearchAction = {
 		}
 		var max_price=-1, min_price=999999;
 		//search for one way flights
-		console.log("sunil")
-		console.log(FlightData)
 		var flight_data = FlightData.default
 		for (var i = 0; i < flight_data.length; ++i) {
 			if(data.startCity === flight_data[i].fromcity && 

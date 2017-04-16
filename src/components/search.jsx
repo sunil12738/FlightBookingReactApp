@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchAction from '../actions/search_action.js'
-// import UpdateOneWay from '../actions/update_oneway.js'
+import UpdateOneWay from '../actions/update_oneway.js'
 
 var Search = React.createClass({
 
@@ -16,10 +16,6 @@ var Search = React.createClass({
 			},
 			oneway : true
 		}
-	},
-
-	componentDidMount: function(){
-	
 	},
 
 	currentDate: function(){
@@ -98,16 +94,14 @@ var Search = React.createClass({
 		this.setState({
 			oneway : true
 		})
-		// TODO : this might not be needed in future as 
-		// flight is one way to two way is already sent in above function
-		// UpdateOneWay.oneWayUpdate(this.state.oneway)
+		UpdateOneWay.oneWayUpdate(this.state.oneway)
 	},
 
 	twoWaySearch: function(){
 		this.setState({
 			oneway : false
 		})
-		// UpdateOneWay.oneWayUpdate(this.state.oneway)
+		UpdateOneWay.oneWayUpdate(this.state.oneway)
 	},
 
 	render: function(){
@@ -115,7 +109,7 @@ var Search = React.createClass({
 			<div className="padding-10px margin-10px border-1px-solid-grey">
 				<div>
 					<input type="button" value="one way" onClick={this.oneWaySearch} className={"button "}/>
-					<input type="button" value="two way" onClick={this.twoWaySearch} className={"button "}/>
+					<input type="button" value="return" onClick={this.twoWaySearch} className={"button "}/>
 				</div>
 				<div>
 					<input list="city_names" ref="startCity" 
