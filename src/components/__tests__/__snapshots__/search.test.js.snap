@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link changes the class when hovered 1`] = `
+<div
+  className="padding-10px margin-10px border-1px-solid-grey"
+>
+  <div>
+    <input
+      className="button "
+      onClick={[Function]}
+      type="button"
+      value="one way"
+    />
+    <input
+      className="button "
+      onClick={[Function]}
+      type="button"
+      value="two way"
+    />
+  </div>
+  <div>
+    <input
+      className=""
+      list="city_names"
+      onClick={[Function]}
+    />
+     
+    <br />
+    <input
+      className=""
+      list="city_names"
+      onClick={[Function]}
+    />
+     
+    <br />
+    <datalist
+      id="city_names"
+    >
+      <option
+        value="delhi"
+      />
+      <option
+        value="mumbai"
+      />
+      <option
+        value="bengaluru"
+      />
+      <option
+        value="kolkata"
+      />
+      <option
+        value="kanpur"
+      />
+    </datalist>
+    <input
+      className=""
+      min="2017-04-16"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="date"
+      value="2017-04-16"
+    />
+     
+    <br />
+    <input
+      className=""
+      disabled={true}
+      min="2017-04-16"
+      onClick={[Function]}
+      type="date"
+    />
+     
+    <br />
+    <input
+      className="button"
+      onClick={[Function]}
+      type="button"
+      value="Search"
+    />
+  </div>
+</div>
+`;
