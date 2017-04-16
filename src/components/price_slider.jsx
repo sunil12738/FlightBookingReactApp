@@ -9,7 +9,8 @@ var PriceSlider = React.createClass({
 	getInitialState: function(){
 		return {
 			minValue : 0, 
-			maxValue : 100
+			maxValue : 100,
+			validation : true
 		}
 	},
 
@@ -22,16 +23,28 @@ var PriceSlider = React.createClass({
 			maxValue : maxValue,
 			searchResult : this.props.data
 		};
-		if(minValue>maxValue) return null;
+		if(!minValue || !maxValue || minValue>maxValue || minValue<0 || maxValue <0) {
+			this.setState({
+				validation : false
+			});
+			return null;
+		}
 		FlightPriceSort.sortFlight(data);
+	},
+
+	resetValidation: function(){
+		this.setState({
+			validation : true
+		});	
 	},
 
 	render: function(){
 		return (
 			<div className="padding-10px margin-10px border-1px-solid-grey">
-				<div className=""> Refine flight search </div>
-				<input type="number" min="0" ref="min_val" placeholder="min price"/> <br/>
-				<input type="number" min="0" ref="max_val" placeholder="max price"/>
+				<h3> Refine flight search </h3>
+				<div>{this.state.validation ? "" : "Enter proper price range"}</div>
+				<input type="number" min="0" ref="min_val" placeholder="min price" onClick={this.resetValidation}/> <br/>
+				<input type="number" min="0" ref="max_val" placeholder="max price" onClick={this.resetValidation}/>
 				<div className="text-align-center">
 					<input type="button" className="button" value="Refine Results" onClick={this.validate} />
 				</div>

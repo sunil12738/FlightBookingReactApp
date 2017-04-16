@@ -15,7 +15,7 @@ exports[`Link changes the class when hovered 1`] = `
       className="button "
       onClick={[Function]}
       type="button"
-      value="two way"
+      value="return"
     />
   </div>
   <div>

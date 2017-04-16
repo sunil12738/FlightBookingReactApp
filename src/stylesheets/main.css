@@ -22,7 +22,7 @@ body {
 	max-width: 100px
 }
 .width-650px {
-	width: 650px;
+	width: 700px;
 }
 .width-70 {
 	width: 70%
@@ -32,6 +32,9 @@ body {
 }
 .width-100 {
 	width: 100%;
+}
+.width-50 {
+	width: 50%;
 }
 .button {
 	height: 27px;

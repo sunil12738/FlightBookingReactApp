@@ -23,6 +23,9 @@ var AppStore = assign({}, EventEmitter.prototype, {
 		var price = 0;
 		if(refineResult){
 			searchData = payloadR.searchResult
+			if(searchData.result){}
+			else {return}
+			//for depart flight select in price range
 			for(var i = 0; i<searchData.result.departure.length; ++i){
 				price = searchData.result.departure[i].price
 				if(parseInt(payloadR.maxValue) < price || parseInt(payloadR.minValue) > price){
@@ -30,6 +33,16 @@ var AppStore = assign({}, EventEmitter.prototype, {
 				}
 				else{
 					searchData.result.departure[i].remove = false
+				}
+			}
+			//for arrival flight select in price range
+			for(var i = 0; i<searchData.result.return_.length; ++i){
+				price = searchData.result.return_[i].price
+				if(parseInt(payloadR.maxValue) < price || parseInt(payloadR.minValue) > price){
+					searchData.result.return_[i].remove = true
+				}
+				else{
+					searchData.result.return_[i].remove = false
 				}
 			}
 		}
