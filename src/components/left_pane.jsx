@@ -28,7 +28,7 @@ var LeftPane = React.createClass({
 	},
 	render: function(){
 		return (
-			<div>
+			<div className="">
 				<Search />
 				<PriceSlider data={this.state.data}/>
 			</div>

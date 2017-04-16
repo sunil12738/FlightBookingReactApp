@@ -1,21 +1,41 @@
+body {
+	width: 1000px;
+	margin: auto;
+}
 .vertical-align-top {
 	vertical-align: top;
 }
 .border-1px-solid-red {
 	border : 2px solid red;
 }
+.border-1px-solid-grey {
+	border: 1px solid #AAAAAA;
+}
 .float-right {
 	float: right;
 }
-.width-100px {
-	width: 100px;
+.float-left {
+	float: left;
+}
+.flight-image {
+	height: 90px;
+	max-width: 100px
+}
+.width-650px {
+	width: 650px;
 }
 .width-70 {
 	width: 70%
 }
+.width-30 {
+	width: 30%
+}
+.width-100 {
+	width: 100%;
+}
 .button {
 	height: 27px;
-	width: 75px;
+	min-width: 75px;
 }
 .button-select {
 	font-weight: 700
@@ -27,4 +47,13 @@
 }
 .display-none {
 	display: none;
+}
+.padding-10px {
+	padding: 10px;
+}
+.margin-10px {
+	margin: 10px;
+}
+.text-align-center {
+	text-align: center;
 }

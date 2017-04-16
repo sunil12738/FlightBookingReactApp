@@ -30,7 +30,7 @@ var RightPane = React.createClass({
 
 	render: function(){
 		return (
-			<div>
+			<div className="border-1px-solid-grey width-650px margin-10px padding-10px">
 				<Itinerary data={this.state.data} oneWay={this.state.oneWay}/>
 				<FlightDetails data={this.state.data} oneWay={this.state.oneWay}/>
 			</div>
